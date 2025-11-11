@@ -1,13 +1,15 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About — ColorNoise</title>
+  <title>About – ColorNoise</title>
+  <meta name="description" content="ColorNoise is a creative studio shaping sonic and visual identity through design, technology, and music." />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="assets/favicon.ico">
+  <link rel="icon" href="assets/favicon.ico" />
 </head>
-<body class="white">
+
+<body class="white fade">
   <header class="site-header">
     <a class="brand" href="/">
       <img src="assets/logo.png" alt="ColorNoise logo" class="brand-logo brand-logo--small" decoding="async" />
@@ -24,36 +26,37 @@
   <main class="page">
     <h1>About</h1>
     <p><strong>ColorNoise</strong> is a creative studio shaping sonic and visual identity through design, technology, and music.</p>
-    <p>Collaborations, commissions, and licensing inquiries: <a href="mailto:hello@colornoise.xyz">hello@colornoise.xyz</a>.</p>
+    <p>Collaborations, commissions, and licensing inquiries: 
+      <a href="mailto:hello@colornoise.xyz">hello@colornoise.xyz</a>
+    </p>
   </main>
 
   <footer class="site-footer">
     <small>© <span id="y"></span> ColorNoise</small>
   </footer>
- <script>
-  // Fade in on page load
-  document.addEventListener("DOMContentLoaded", () => {
-    document.body.classList.add("fade-in");
-  });
 
-  // Fade out when clicking internal links
-  document.querySelectorAll('a[href]').forEach(link => {
-    const target = link.getAttribute('href');
-    if (target && (target.endsWith('.html') || target.startsWith('/'))) {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        document.body.classList.remove('fade-in');
-        setTimeout(() => {
-          window.location = target;
-        }, 400);
-      });
-    }
-  });
+  <script>
+    // Fade-in when page loads
+    document.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("fade-in");
+    });
 
-  // Keep your year script
-  document.getElementById('y').textContent = new Date().getFullYear();
-</script>
+    // Fade-out when clicking links to other internal pages
+    document.querySelectorAll('a[href]').forEach(link => {
+      const target = link.getAttribute('href');
+      if (target && (target.endsWith('.html') || target.startsWith('/'))) {
+        link.addEventListener('click', e => {
+          e.preventDefault();
+          document.body.classList.remove('fade-in');
+          setTimeout(() => {
+            window.location = target;
+          }, 400);
+        });
+      }
+    });
 
+    // Copyright year
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-
