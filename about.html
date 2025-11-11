@@ -30,6 +30,30 @@
   <footer class="site-footer">
     <small>© <span id="y"></span> ColorNoise</small>
   </footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+ <script>
+  // Fade in on page load
+  document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("fade-in");
+  });
+
+  // Fade out when clicking internal links
+  document.querySelectorAll('a[href]').forEach(link => {
+    const target = link.getAttribute('href');
+    if (target && (target.endsWith('.html') || target.startsWith('/'))) {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.body.classList.remove('fade-in');
+        setTimeout(() => {
+          window.location = target;
+        }, 400);
+      });
+    }
+  });
+
+  // Keep your year script
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
+
