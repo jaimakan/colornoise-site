@@ -30,7 +30,7 @@ body.white {
 
 /* Logo animation */
 .brand-logo {
-  width: min(420px, 60vw); /* responsive but keeps exact image proportions */
+  width: min(700px, 80vw); /* responsive but keeps exact image proportions */
   height: auto;
   image-rendering: auto; /* prevents color distortion */
   opacity: 0; /* start invisible */
@@ -40,7 +40,7 @@ body.white {
 
 /* Smaller version for internal pages */
 .brand-logo--small {
-  width: min(240px, 40vw);
+  width: min(500px, 60vw);
   opacity: 0;
   animation: fadeInLogo 1.2s ease-in-out forwards;
   animation-delay: 0.1s;
