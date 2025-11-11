@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ColorNoise</title>
+  <meta name="description" content="A creative studio shaping sonic and visual identity through design, technology, and music.">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="wrap">
+    <img src="assets/logo.png" alt="ColorNoise logo" class="logo" />
+    <h1>ColorNoise</h1>
+    <p class="tagline">A creative studio shaping sonic and visual identity through design, technology, and music.</p>
+
+    <nav class="links">
+      <a href="mailto:hello@colornoise.xyz">Email</a>
+      <a href="https://instagram.com/yourhandle" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://open.spotify.com/artist/yourid" target="_blank" rel="noopener">Spotify</a>
+    </nav>
+
+    <footer>
+      <small>© <span id="year"></span> ColorNoise</small>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
